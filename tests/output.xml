@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on darwin)" generated="2024-07-09T23:59:35.886504" rpa="false" schemaversion="5">
+<suite id="s1" name="testDemo1" source="/Users/jaredsalinas/PycharmProjects/RobotFrameworkDemo/tests/testDemo1.robot">
+<test id="s1-t1" name="Validate Unsuccessful Login" line="16">
+<kw name="open the browser with the Browser url" owner="Generic" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-07-09T23:59:36.060736" level="INFO">Opening browser 'Chrome' to base url 'https://rahulshettyacademy.com/loginpagePractise/'.</msg>
+<arg>${url}</arg>
+<arg>${browser_name}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-07-09T23:59:36.060484" elapsed="3.064501"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-07-09T23:59:39.126064" elapsed="0.382740"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>30</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-07-09T23:59:39.509034" elapsed="0.002059"/>
+</kw>
+<status status="PASS" start="2024-07-09T23:59:36.059775" elapsed="3.451641"/>
+</kw>
+<kw name="open the browser with the Mortgage payment url" owner="Generic">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-07-09T23:59:39.513211" level="INFO">Opening browser 'headlesschrome' to base url 'https://rahulshettyacademy.com/loginpagePractise/'.</msg>
+<arg>${url}</arg>
+<arg>headlesschrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-07-09T23:59:39.512663" elapsed="2.514081"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-07-09T23:59:42.028350" elapsed="0.055974"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>30</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-07-09T23:59:42.085003" elapsed="0.003969"/>
+</kw>
+<status status="PASS" start="2024-07-09T23:59:39.512062" elapsed="2.577181"/>
+</kw>
+<kw name="Fill the login form">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-09T23:59:42.094693" level="INFO">Typing text 'jared.salinas' into text field 'id:username'.</msg>
+<arg>id:username</arg>
+<arg>jared.salinas</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-09T23:59:42.091913" elapsed="0.416443"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-09T23:59:42.508996" level="INFO">Typing text 'jared' into text field 'id:password'.</msg>
+<arg>id:password</arg>
+<arg>jared</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-09T23:59:42.508697" elapsed="0.111405"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-07-09T23:59:42.621397" level="INFO">Clicking button 'id:signInBtn'.</msg>
+<arg>id:signInBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-09T23:59:42.620747" elapsed="0.073176"/>
+</kw>
+<status status="PASS" start="2024-07-09T23:59:42.090589" elapsed="0.603586"/>
+</kw>
+<kw name="wait until it checks and display error message">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${error_message_login}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-09T23:59:42.695506" elapsed="2.006718"/>
+</kw>
+<status status="PASS" start="2024-07-09T23:59:42.694823" elapsed="2.007588"/>
+</kw>
+<kw name="verify error message is correct">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-07-09T23:59:44.709327" level="INFO">Verifying element 'css:.alert-danger' contains exact text 'Incorrect username/password.'.</msg>
+<arg>${error_message_login}</arg>
+<arg>Incorrect username/password.</arg>
+<arg>ignore_case=True</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-07-09T23:59:44.708494" elapsed="0.020219"/>
+</kw>
+<status status="PASS" start="2024-07-09T23:59:44.702635" elapsed="0.026189"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-07-09T23:59:44.729229" elapsed="0.095425"/>
+</kw>
+<tag>REGRESSION</tag>
+<status status="PASS" start="2024-07-09T23:59:36.059218" elapsed="8.765607"/>
+</test>
+<doc>To validate the Login form</doc>
+<status status="PASS" start="2024-07-09T23:59:35.888294" elapsed="8.937363"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">REGRESSION</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="testDemo1">testDemo1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

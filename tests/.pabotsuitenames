@@ -1,0 +1,12 @@
+datasources:4fb414ce708952359312b3889fc4de9afc80f12d
+commandlineoptions:4ee79e3c6141660f51caf7a1f58be52f350d88e0
+suitesfrom:no-suites-from-option
+file:82162e5311bd16b3516d51d36445edb56587479f
+--suite Tests.testDemo7PO
+--suite Tests.apiTests.testDemoAPI
+--suite Tests.testDemo1
+--suite Tests.testDemo2
+--suite Tests.testDemo3
+--suite Tests.testDemo4
+--suite Tests.testDemo5CSV
+--suite Tests.testDemo6CustomKeywords

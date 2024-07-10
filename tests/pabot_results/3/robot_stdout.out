@@ -1,0 +1,18 @@
+==============================================================================
+Tests                                                                         
+==============================================================================
+Tests.testDemo2 :: To validate the Login form                                 
+==============================================================================
+Validate Unsuccessful Login                                           | PASS |
+------------------------------------------------------------------------------
+Validate Cards display in the shopping page                           | PASS |
+------------------------------------------------------------------------------
+Select the Form and navigate to child window                          | PASS |
+------------------------------------------------------------------------------
+Tests.testDemo2 :: To validate the Login form                         | PASS |
+3 tests, 3 passed, 0 failed
+==============================================================================
+Tests                                                                 | PASS |
+3 tests, 3 passed, 0 failed
+==============================================================================
+Output:  /Users/jaredsalinas/PycharmProjects/RobotFrameworkDemo/tests/pabot_results/3/output.xml

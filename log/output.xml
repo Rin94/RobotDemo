@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.9.6 on darwin)" generated="2024-03-20T16:43:40.776155" rpa="false" schemaversion="5">
+<suite id="s1" name="testDemo7PO" source="/Users/jaredsalinas/PycharmProjects/RobotFrameworkDemo/tests/testDemo7PO.robot">
+<test id="s1-t1" name="Validate navigate to child window" line="34">
+<kw name="open the browser with the Browser url" owner="Generic" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-03-20T16:43:40.933764" level="INFO">Opening browser '' to base url 'https://rahulshettyacademy.com/loginpagePractise/'.</msg>
+<msg time="2024-03-20T16:43:40.934632" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2024-03-20T16:43:40.934781" level="FAIL">ValueError:  is not a supported browser.</msg>
+<arg>${url}</arg>
+<arg>${browser_name}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2024-03-20T16:43:40.933419" elapsed="0.007627">ValueError:  is not a supported browser.</status>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" start="2024-03-20T16:43:40.941359" elapsed="0.000108"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>30</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="NOT RUN" start="2024-03-20T16:43:40.941606" elapsed="0.000084"/>
+</kw>
+<status status="FAIL" start="2024-03-20T16:43:40.932466" elapsed="0.009355">ValueError:  is not a supported browser.</status>
+</kw>
+<kw name="Close Browser session" owner="Generic" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-03-20T16:43:40.942443" elapsed="0.000179"/>
+</kw>
+<status status="PASS" start="2024-03-20T16:43:40.942109" elapsed="0.000611"/>
+</kw>
+<tag>REGRESSION</tag>
+<tag>SMOKE</tag>
+<status status="FAIL" start="2024-03-20T16:43:40.931746" elapsed="0.011041">Setup failed:
+ValueError:  is not a supported browser.</status>
+</test>
+<doc>To validate the Login form</doc>
+<status status="FAIL" start="2024-03-20T16:43:40.777711" elapsed="0.165787"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">REGRESSION</stat>
+<stat pass="0" fail="1" skip="0">SMOKE</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="testDemo7PO">testDemo7PO</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-03-20T16:43:40.929257" level="ERROR">Error in file '/Users/jaredsalinas/PycharmProjects/RobotFrameworkDemo/tests/testDemo7PO.robot' on line 7: Invalid resource file extension '.py'. Supported extensions are '.json', '.resource', '.rest', '.robot', '.rsrc', '.rst', '.tsv' and '.txt'.</msg>
+</errors>
+</robot>

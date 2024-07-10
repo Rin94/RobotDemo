@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on darwin)" generated="2024-03-21T00:09:46.555001" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="/Users/jaredsalinas/PycharmProjects/RobotFrameworkDemo/tests">
+<suite id="s1-s1" name="testDemo3" source="/Users/jaredsalinas/PycharmProjects/RobotFrameworkDemo/tests/testDemo3.robot">
+<test id="s1-s1-t1" name="Validate Child window Functionality" line="18">
+<kw name="open the browser with the Mortgage payment url" owner="Generic" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-03-21T00:09:46.842012" level="INFO">Opening browser 'headlesschrome' to base url 'https://rahulshettyacademy.com/loginpagePractise/'.</msg>
+<arg>${url}</arg>
+<arg>headlesschrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-03-21T00:09:46.841624" elapsed="6.047069"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-03-21T00:09:52.920801" elapsed="0.264362"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>30</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-03-21T00:09:53.185464" elapsed="0.019072"/>
+</kw>
+<status status="PASS" start="2024-03-21T00:09:46.840454" elapsed="6.364350"/>
+</kw>
+<kw name="Select the link of child window">
+<kw name="Find element by xpath" owner="Generic">
+<return>
+<value>${before_xpath}${option}${after_xpath}</value>
+<status status="PASS" start="2024-03-21T00:09:53.207507" elapsed="0.000230"/>
+</return>
+<msg time="2024-03-21T00:09:53.208133" level="INFO">${linkMateria} = xpath://a[@class='blinkingText']</msg>
+<var>${linkMateria}</var>
+<arg>xpath://a[@class='</arg>
+<arg>blinkingText</arg>
+<arg>']</arg>
+<status status="PASS" start="2024-03-21T00:09:53.206361" elapsed="0.001827"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-21T00:09:53.216842" level="INFO">Clicking element 'xpath://a[@class='blinkingText']'.</msg>
+<arg>${linkMateria}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-21T00:09:53.208992" elapsed="0.226590"/>
+</kw>
+<status status="PASS" start="2024-03-21T00:09:53.205212" elapsed="0.231340"/>
+</kw>
+<kw name="Verify the user is Switched to Child window">
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>NEW</arg>
+<arg>30s</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" start="2024-03-21T00:09:53.439038" elapsed="0.136198"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-21T00:10:03.599792" level="INFO">Slept 10 seconds.</msg>
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-21T00:09:53.590723" elapsed="10.009332"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-03-21T00:10:03.602201" level="INFO">Verifying element 'xpath://h1' contains exact text 'DOCUMENTS REQUEST'.</msg>
+<arg>xpath://h1</arg>
+<arg>DOCUMENTS REQUEST</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-03-21T00:10:03.600998" elapsed="0.051353"/>
+</kw>
+<status status="PASS" start="2024-03-21T00:09:53.437320" elapsed="10.215239"/>
+</kw>
+<kw name="Grab the email id in the child window">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-03-21T00:10:03.704119" level="INFO">${expectedText} = Please email us at mentor@rahulshettyacademy.com with below template to receive response</msg>
+<var>${expectedText}</var>
+<arg>css:.red</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-21T00:10:03.653282" elapsed="0.050908"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2024-03-21T00:10:03.708003" level="INFO">@{textList} = [ Please email us  |  mentor@rahulshettyacademy.com with below templ | e to receive response ]</msg>
+<var>@{textList}</var>
+<arg>${expectedText}</arg>
+<arg>at</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2024-03-21T00:10:03.705814" elapsed="0.002375"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-03-21T00:10:03.716027" level="INFO">${text_split} =  mentor@rahulshettyacademy.com with below templ</msg>
+<var>${text_split}</var>
+<arg>${textList}</arg>
+<arg>1</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-03-21T00:10:03.709362" elapsed="0.006731"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2024-03-21T00:10:03.717121" level="INFO">@{textList2} = [ mentor@rahulshettyacademy.com | with | below | templ ]</msg>
+<var>@{textList2}</var>
+<arg>${text_split}</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2024-03-21T00:10:03.716588" elapsed="0.000656"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-03-21T00:10:03.718046" level="INFO">${email} = mentor@rahulshettyacademy.com</msg>
+<var>${email}</var>
+<arg>${textList2}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-03-21T00:10:03.717698" elapsed="0.000395"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-03-21T00:10:03.719208" level="INFO">${email} = mentor@rahulshettyacademy.com</msg>
+<arg>${email}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-03-21T00:10:03.718701" elapsed="0.000578"/>
+</kw>
+<status status="PASS" start="2024-03-21T00:10:03.652847" elapsed="0.066552"/>
+</kw>
+<kw name="Switch to parent window and enter the email">
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>MAIN</arg>
+<arg>5s</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" start="2024-03-21T00:10:03.721609" elapsed="0.054306"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2024-03-21T00:10:03.792520" level="INFO">Page title is 'LoginPage Practise | Rahul Shetty Academy'.</msg>
+<arg>LoginPage Practise | Rahul Shetty Academy</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2024-03-21T00:10:03.781610" elapsed="0.011069"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-21T00:10:03.794795" level="INFO">Typing text 'mentor@rahulshettyacademy.com' into text field 'id:username'.</msg>
+<arg>id:username</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-21T00:10:03.793084" elapsed="0.375918"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-21T00:10:09.172444" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-21T00:10:04.170033" elapsed="5.003155"/>
+</kw>
+<status status="PASS" start="2024-03-21T00:10:03.719841" elapsed="5.454402"/>
+</kw>
+<kw name="Close Browser session" owner="Generic" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-03-21T00:10:09.176390" elapsed="1.521313"/>
+</kw>
+<status status="PASS" start="2024-03-21T00:10:09.175392" elapsed="1.522526"/>
+</kw>
+<tag>REGRESSION</tag>
+<tag>SMOKE</tag>
+<status status="PASS" start="2024-03-21T00:09:46.839508" elapsed="23.858509"/>
+</test>
+<doc>To validate the Login form</doc>
+<status status="PASS" start="2024-03-21T00:09:46.584207" elapsed="24.135523"/>
+</suite>
+<status status="PASS" start="2024-03-21T00:09:46.565847" elapsed="24.160082"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">REGRESSION</stat>
+<stat pass="1" fail="0" skip="0">SMOKE</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="testDemo3">Tests.testDemo3</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

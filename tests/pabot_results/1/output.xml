@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on darwin)" generated="2024-03-21T00:09:46.558675" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="/Users/jaredsalinas/PycharmProjects/RobotFrameworkDemo/tests">
+<suite id="s1-s1" name="apiTests" source="/Users/jaredsalinas/PycharmProjects/RobotFrameworkDemo/tests/apiTests">
+<suite id="s1-s1-s1" name="testDemoAPI" source="/Users/jaredsalinas/PycharmProjects/RobotFrameworkDemo/tests/apiTests/testDemoAPI.robot">
+<test id="s1-s1-s1-t1" name="Play around with Dictionary" line="14">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-03-21T00:09:46.779853" level="INFO">&amp;{dictionary} = { name=rahulshetty | course=robot | website=rahulshettyacademy.com }</msg>
+<var>&amp;{dictionary}</var>
+<arg>name=rahulshetty</arg>
+<arg>course=robot</arg>
+<arg>website=rahulshettyacademy.com</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-03-21T00:09:46.779315" elapsed="0.000601"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-03-21T00:09:46.780456" level="INFO">{'name': 'rahulshetty', 'course': 'robot', 'website': 'rahulshettyacademy.com'}</msg>
+<arg>${dictionary}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-03-21T00:09:46.780191" elapsed="0.000328"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<msg time="2024-03-21T00:09:46.780846" level="INFO">False</msg>
+<arg>${dictionary}</arg>
+<arg>name</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2024-03-21T00:09:46.780649" elapsed="0.000245"/>
+</kw>
+<kw name="Dictionary Should Contain Item" owner="Collections">
+<msg time="2024-03-21T00:09:46.781189" level="INFO">False
+False</msg>
+<arg>${dictionary}</arg>
+<arg>course</arg>
+<arg>robot</arg>
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<status status="PASS" start="2024-03-21T00:09:46.781014" elapsed="0.000219"/>
+</kw>
+<kw name="Dictionary Should Not Contain Value" owner="Collections">
+<msg time="2024-03-21T00:09:46.781535" level="INFO">False</msg>
+<arg>${dictionary}</arg>
+<arg>jared.salinas</arg>
+<doc>Fails if ``value`` is found from ``dictionary``.</doc>
+<status status="PASS" start="2024-03-21T00:09:46.781369" elapsed="0.000210"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-03-21T00:09:46.781874" level="INFO">rahulshetty</msg>
+<arg>${dictionary}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-03-21T00:09:46.781706" elapsed="0.000216"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-03-21T00:09:46.782231" level="INFO">${value} = rahulshetty</msg>
+<var>${value}</var>
+<arg>${dictionary}</arg>
+<arg>name</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-03-21T00:09:46.782043" elapsed="0.000216"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-03-21T00:09:46.782518" level="INFO">rahulshetty</msg>
+<arg>${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-03-21T00:09:46.782384" elapsed="0.000179"/>
+</kw>
+<tag>API</tag>
+<status status="PASS" start="2024-03-21T00:09:46.778650" elapsed="0.004051"/>
+</test>
+<test id="s1-s1-s1-t2" name="Add Book into Library Database" line="25">
+<kw name="Generate Random String" owner="String">
+<msg time="2024-03-21T00:09:46.785090" level="INFO">${PO_Number} = 18013</msg>
+<var>${PO_Number}</var>
+<arg>5</arg>
+<arg>0123456789</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2024-03-21T00:09:46.784353" elapsed="0.000782"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2024-03-21T00:09:46.786185" level="INFO">${isbn_string} = osDR</msg>
+<var>${isbn_string}</var>
+<arg>4</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2024-03-21T00:09:46.785313" elapsed="0.000913"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-03-21T00:09:46.786870" level="INFO">&amp;{req_body} = { name=Learn Appium with Java | isbn=osDR | aisle=18013 | author=Angele Laeken }</msg>
+<var>&amp;{req_body}</var>
+<arg>name=${book_name}</arg>
+<arg>isbn=${isbn_string}</arg>
+<arg>aisle=${PO_Number}</arg>
+<arg>author=Angele Laeken</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-03-21T00:09:46.786402" elapsed="0.000505"/>
+</kw>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-03-21T00:09:48.318914" level="INFO">POST Request : url=https://rahulshettyacademy.com/Library/Addbook.php 
+ path_url=/Library/Addbook.php 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '95', 'Content-Type': 'application/json'} 
+ body=b'{"name": "Learn Appium with Java", "isbn": "osDR", "aisle": "18013", "author": "Angele Laeken"}' 
+ </msg>
+<msg time="2024-03-21T00:09:48.319372" level="INFO">POST Response : url=https://rahulshettyacademy.com/Library/Addbook.php 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 21 Mar 2024 06:09:48 GMT', 'Server': 'Apache/2.4.52 (Ubuntu)', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'POST', 'Access-Control-Max-Age': '3600', 'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With', 'Content-Length': '45', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive', 'Content-Type': 'application/json;charset=UTF-8'} 
+ body={"Msg":"successfully added","ID":"osDR18013"} 
+ </msg>
+<msg time="2024-03-21T00:09:48.320640" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>${base_url}/Library/Addbook.php</arg>
+<arg>json=${req_body}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2024-03-21T00:09:46.787771" elapsed="1.533181"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-03-21T00:09:48.326827" level="INFO">{'Msg': 'successfully added', 'ID': 'osDR18013'}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-03-21T00:09:48.323263" elapsed="0.003704"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<msg time="2024-03-21T00:09:48.332729" level="INFO">False</msg>
+<arg>${response.json()}</arg>
+<arg>ID</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2024-03-21T00:09:48.327501" elapsed="0.005314"/>
+</kw>
+<kw name="Dictionary Should Contain Value" owner="Collections">
+<msg time="2024-03-21T00:09:48.334783" level="INFO">False</msg>
+<arg>${response.json()}</arg>
+<arg>successfully added</arg>
+<doc>Fails if ``value`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2024-03-21T00:09:48.333484" elapsed="0.002614"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-03-21T00:09:48.350335" level="INFO">${book_id} = osDR18013</msg>
+<var>${book_id}</var>
+<arg>${response.json()}</arg>
+<arg>ID</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-03-21T00:09:48.336625" elapsed="0.014123"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-03-21T00:09:48.356398" level="INFO">${book_id} = osDR18013</msg>
+<arg>${book_id}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-03-21T00:09:48.353871" elapsed="0.003110"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-03-21T00:09:48.360783" level="INFO">osDR18013</msg>
+<arg>${book_id}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-03-21T00:09:48.358537" elapsed="0.003381"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${response.json()}[Msg]</arg>
+<arg>successfully added</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-03-21T00:09:48.362171" elapsed="0.485968"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2024-03-21T00:09:48.881145" elapsed="0.001161"/>
+</kw>
+<tag>API</tag>
+<status status="PASS" start="2024-03-21T00:09:46.783023" elapsed="2.157753"/>
+</test>
+<test id="s1-s1-s1-t3" name="Get Book from Library Database" line="40">
+<kw name="Get book response in database">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-03-21T00:09:50.923661" level="INFO">GET Request : url=https://rahulshettyacademy.com/Library/GetBook.php?ID=osDR18013 
+ path_url=/Library/GetBook.php?ID=osDR18013 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-03-21T00:09:50.923824" level="INFO">GET Response : url=https://rahulshettyacademy.com/Library/GetBook.php?ID=osDR18013 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 21 Mar 2024 06:09:51 GMT', 'Server': 'Apache/2.4.52 (Ubuntu)', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'POST', 'Access-Control-Max-Age': '3600', 'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With', 'Content-Length': '95', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive', 'Content-Type': 'application/json;charset=UTF-8'} 
+ body=[{"book_name":"Learn Appium with Java","isbn":"osDR","aisle":"18013","author":"Angele Laeken"}] 
+ </msg>
+<msg time="2024-03-21T00:09:50.924036" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>${base_url}/Library/GetBook.php</arg>
+<arg>params=ID=${book_id}</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-03-21T00:09:49.035395" elapsed="1.888685"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-03-21T00:09:50.928115" level="INFO">[{'book_name': 'Learn Appium with Java', 'isbn': 'osDR', 'aisle': '18013', 'author': 'Angele Laeken'}]</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-03-21T00:09:50.925553" elapsed="0.003105"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${response.json()}[0][author]</arg>
+<arg>Angele Laeken</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-03-21T00:09:50.929260" elapsed="0.001228"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${response.json()}[0][book_name]</arg>
+<arg>${book_name}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-03-21T00:09:50.930688" elapsed="0.001065"/>
+</kw>
+<status status="PASS" start="2024-03-21T00:09:49.034851" elapsed="1.897054"/>
+</kw>
+<tag>API</tag>
+<status status="PASS" start="2024-03-21T00:09:49.010029" elapsed="1.922033"/>
+</test>
+<test id="s1-s1-s1-t4" name="Delete a book from Library Database" line="44">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-03-21T00:09:50.933771" level="INFO">&amp;{request_body} = { ID=osDR18013 }</msg>
+<var>&amp;{request_body}</var>
+<arg>ID=${book_id}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-03-21T00:09:50.933318" elapsed="0.000497"/>
+</kw>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-03-21T00:09:53.501811" level="INFO">POST Request : url=https://rahulshettyacademy.com/Library/DeleteBook.php 
+ path_url=/Library/DeleteBook.php 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '19', 'Content-Type': 'application/json'} 
+ body=b'{"ID": "osDR18013"}' 
+ </msg>
+<msg time="2024-03-21T00:09:53.502009" level="INFO">POST Response : url=https://rahulshettyacademy.com/Library/DeleteBook.php 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 21 Mar 2024 06:09:53 GMT', 'Server': 'Apache/2.4.52 (Ubuntu)', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'POST', 'Access-Control-Max-Age': '3600', 'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With', 'Content-Length': '38', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive', 'Content-Type': 'application/json;charset=UTF-8'} 
+ body={"msg":"book is successfully deleted"} 
+ </msg>
+<msg time="2024-03-21T00:09:53.502201" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>${base_url}/Library/DeleteBook.php</arg>
+<arg>json=${request_body}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2024-03-21T00:09:50.934115" elapsed="2.568127"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-03-21T00:09:53.508496" level="INFO">{'msg': 'book is successfully deleted'}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-03-21T00:09:53.502468" elapsed="0.006127"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${response.json()}[msg]</arg>
+<arg>book is successfully deleted</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-03-21T00:09:53.508841" elapsed="0.005462"/>
+</kw>
+<tag>API</tag>
+<status status="PASS" start="2024-03-21T00:09:50.932564" elapsed="2.582259"/>
+</test>
+<status status="PASS" start="2024-03-21T00:09:46.594428" elapsed="6.932200"/>
+</suite>
+<status status="PASS" start="2024-03-21T00:09:46.593045" elapsed="6.941204"/>
+</suite>
+<status status="PASS" start="2024-03-21T00:09:46.570262" elapsed="6.968591"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="4" fail="0" skip="0">API</stat>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1" name="apiTests">Tests.apiTests</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1-s1" name="testDemoAPI">Tests.apiTests.testDemoAPI</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
